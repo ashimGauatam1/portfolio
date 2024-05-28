@@ -175,6 +175,9 @@ img {
 .home__data h1{
   position: absolute;
   top: -60px;
+  font-size: 2.5rem;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1.9px;
 }
 .dynamic-txts{
   position: absolute;
@@ -193,7 +196,12 @@ img {
   font-weight: 100px;
   position: relative;
   top: 0;
-  animation: slide 12s steps(4) infinite;
+  animation: slide 12.4s steps(4) infinite;
+}
+@keyframes slide {
+  100%{
+    top: -360px;
+  }
 }
 .dynamic-txts li span{
   position: relative;
