@@ -11,7 +11,7 @@
   --h2-font-size: 1.25rem;
   --normal-font-size: .938rem;
   --smaller-font-size: .75rem;
-  --mb-2: 1rem;
+  --mb-2: 2rem;
   --mb-4: 2rem;
   --mb-5: 2.5rem;
   --mb-6: 3rem;
@@ -171,6 +171,55 @@ img {
   right: 0;
 }
 
+/* Typing */
+.home__data h1{
+  position: absolute;
+  top: -60px;
+}
+.dynamic-txts{
+  position: absolute;
+  top: 50px;
+  left: 1px;
+  height: 90px;
+  font-family: 'Poppins',sans-serif;
+  font-weight: bold;
+  line-height: 90px;
+  overflow: hidden;
+}
+.dynamic-txts li{
+  list-style: none;
+  color: rgb(241, 14, 204);
+  font-size: 60px;
+  font-weight: 100px;
+  position: relative;
+  top: 0;
+  animation: slide 12s steps(4) infinite;
+}
+.dynamic-txts li span{
+  position: relative;
+  margin: 1px 0;
+  line-height: 50px;
+}
+.dynamic-txts li span::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 98%;
+  width: 100%;
+  background: #ffffff;
+  border-left: 2px solid rgb(241, 14, 204);
+  animation: typing 3s steps(10) infinite;
+}
+@keyframes typing {
+  40%, 60%{
+    left: calc(100% + 30px);
+  }
+  100%{
+    left: 0;
+  }
+}
+
+
 /*===== HOME =====*/
 .home {
   position: relative;
@@ -188,6 +237,8 @@ img {
   color: rgb(255, 69, 36);
 }
 .home__social {
+  position: relative;
+  top: 80px;
   display: flex;
   flex-direction: column;
 }
@@ -202,6 +253,7 @@ img {
 }
 .home__img {
   position: absolute;
+  top: 100px;
   right: 0;
   bottom: 0;
   width: 260px;
@@ -217,7 +269,7 @@ img {
 .button {
   display: inline-block;
   position: relative;
-  top: 55px;
+  top: 125px;
   background-color: rgb(51, 172, 51);
   color: #fff;
   padding: 0.75rem 2.5rem;
@@ -357,16 +409,22 @@ img {
   color: #fff;
   margin: 0 var(--mb-2);
 }
+
+.footer__icon:hover{
+  color: rgb(105, 197, 29);
+}
+
 .footer__copy {
   font-size: var(--smaller-font-size);
 }
 
 /* ===== MEDIA QUERIES=====*/
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 690px) {
   .home {
     row-gap: 2rem;
   }
   .home__img {
+    top: 350px;
     width: 200px;
   }
 }
@@ -381,12 +439,13 @@ img {
     align-self: flex-end;
   }
   .home__social-icon {
-    margin-bottom: 0;
+    margin-top:30px ;
     margin-right: var(--mb-4);
   }
   .home__img {
-    width: 300px;
+    width: 200px;
     bottom: 25%;
+    top: 90px;
   }
   .about__container {
     grid-template-columns: repeat(2, 1fr);
@@ -455,6 +514,7 @@ img {
   }
   .about__img img {
     width: 300px;
+    /* top: 350px; */
   }
   .skills__container {
     grid-template-columns: repeat(2, 1fr);
@@ -476,6 +536,7 @@ img {
     padding: 10rem 0 2rem;
   }
   .home__img {
+    /* top: 450px; */
     width: 450px;
   }
 }
